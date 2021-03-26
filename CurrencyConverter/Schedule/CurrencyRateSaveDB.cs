@@ -28,7 +28,7 @@ namespace CurrencyConverter.Schedule
                 var rates = new Rates()
                 {
                     timestamp = data.timestamp,
-                    //timestamp = Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds()),//just for test
+                    //timestamp = Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds()),
                     AED = data.Rates.AED,
                     AFN = data.Rates.AFN,
                     ALL = data.Rates.ALL,
