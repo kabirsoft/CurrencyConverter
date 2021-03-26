@@ -102,8 +102,7 @@ namespace CurrencyConverter.Model
         [Column(TypeName = "decimal(18, 6)")]
         public decimal ERN { get; set; }
         [Column(TypeName = "decimal(18, 6)")]
-        public decimal ETB { get; set; }
-        
+        public decimal ETB { get; set; }        
         public int EUR { get; set; }
         [Column(TypeName = "decimal(18, 6)")]
         public decimal FJD { get; set; }
