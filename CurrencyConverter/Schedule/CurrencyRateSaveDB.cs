@@ -20,15 +20,15 @@ namespace CurrencyConverter.Schedule
             {
                 var currency = new Currency()
                 {
-                    //timestamp = data.timestamp,
-                    timestamp = Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds()),
+                    timestamp = data.timestamp,
+                    //timestamp = Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds()),
                     @base = data.@base,
                     date = data.date                    
                 };
                 var rates = new Rates()
                 {
-                    //timestamp = data.timestamp,
-                    timestamp = Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds()),
+                    timestamp = data.timestamp,
+                    //timestamp = Convert.ToInt32(DateTimeOffset.Now.ToUnixTimeSeconds()),//just for test
                     AED = data.Rates.AED,
                     AFN = data.Rates.AFN,
                     ALL = data.Rates.ALL,

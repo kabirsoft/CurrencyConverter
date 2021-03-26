@@ -342,10 +342,8 @@ namespace CurrencyConverter.Model
         public decimal ZAR { get; set; }
         [Column(TypeName = "decimal(18, 6)")]
         public decimal ZMK { get; set; }
-
         [Column(TypeName = "decimal(18, 6)")]
         public decimal ZMW { get; set; }
-
         [Column(TypeName = "decimal(18, 6)")]
         public decimal ZWL { get; set; }
     }
