@@ -1,0 +1,80 @@
+------------------------- Description:(what this app do) ---------------------------
+1. A console application that take two currency codes and one amount as input. The amount is in the first currency. 
+This program calculate the currency amount for the second currency code using latest exchange rate.
+Input date is optional. If you input date, it will retrieve exchange rate a given date using fixer.io api.
+
+2. This project also have a program for Task scheduler. That program execute once a day and the program retrieve the latest
+exchange rate and store it in a database. Used MSSqlServer and Entity framework to do that.
+
+------- Example input (date is optional)----------
+Enter currency: USD
+Enter amount: 100
+Enter currency: NOK
+Enter date(YYYY-MM-DD):
+--------- Output ----------
+USD: 1 =  NOK: 8.656895123432926492516706246
+USD: 100  = NOK: 865.6895123432926492516706246
+
+-------------------------- Setup project locally ----------------------------------
+1. Download/git clone from github
+2. You have to migrate database to run this application.
+How to migrate:
+VS->Tool->nuget package manager->package manager console
+>add-migration "Create database CreateDB"
+>update-database -verbose
+Check MSSql if database has been created (Database=CurrencyConverter).
+
+------------------- How to run ------
+Check necessary frameworks/packages and tools has been installed.
+ctr + f5 or VS->Debug->start without debugging
+
+---------------------- Framework and tools ----------
+.netCore 3.1
+Language:C# 8.0
+EntityFrameworkCore 5.0.4
+MSSql
+Microsoft.EntityFrameworkCore.SqlServer: 5.0.4
+Migration(EntityFrameworkCore tool : 5.0.4
+AspNet.WebApi.Client: Version 5.2.7
+Newtonsoft.Json  Version 13.0.1
+
+------- Convert json to class in Visual studio ---------
+Open postman
+Get API : http://data.fixer.io/api/latest?access_key=ea6cf1029f1659f9d30d618a3ef72094
+Copy Json data from postman and paste to  VisualStudio->Edit->Paste special-> Paste Json to classes
+
+------------- App.Config ------
+Currency convert api(fixer.no) and access_key is cofigured here.
+Program read api from here
+
+---------- How to create CurrencyConverter.exe file ------
+rClick Project(CurrencyConverter)->publish->choose a folder where you want to put exe file  
+
+------------ Task schedule/Cron job -----
+Once create Task scheduler, it will save automatically to DB. No need to call save() function in Main().
+------------- How to create Task scheduler ----
+For windows:
+1. Open Task scheduler.
+2. Create new Task.
+3. Map CurrencyConverter.exe file in Action Tab
+   select daily
+
+For Linux: Use cron job
+crontab -e
+0 23 * * * /path/to/executable
+
+---------------------------------- Project structure ---------
+Solution name: CurrencyConverter
+Project name: CurrencyConverter
+    ExchangeRate
+	   ExchangeRates.cs //Retrieve exchange rate using fixer.io API
+	Model(it will generate two table)
+		Currency.cs
+		Rates.cs 
+	Schedule(It will retrieve the latest exchange rate and store it in database, execute once a day by Task scheduler)
+	   CurrencyRateSaveDB.cs
+
+----------------- fixer.no -------------
+On https://fixer.io/ you can sign up to get access to an WebApi that provides you with currency 
+exchange rates. The API provides the rates in JSON structures. 
+Sign up to get access with the API. 
