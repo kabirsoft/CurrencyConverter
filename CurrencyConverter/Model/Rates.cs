@@ -13,7 +13,6 @@ namespace CurrencyConverter.Model
 
         [Column(TypeName = "decimal(18, 6)")]
         public decimal AED { get; set; }
-
         [Column(TypeName = "decimal(18, 6)")]
         public decimal AFN { get; set; }
         [Column(TypeName = "decimal(18, 6)")]
