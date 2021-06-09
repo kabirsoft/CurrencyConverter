@@ -78,3 +78,21 @@ Project name: CurrencyConverter
 On https://fixer.io/ you can sign up to get access to an WebApi that provides you with currency 
 exchange rates. The API provides the rates in JSON structures. 
 Sign up to get access with the API. 
+
+https://fixer.io/quickstart
+
+Latest data:
+http://data.fixer.io/api/latest?access_key=ea6cf1029f1659f9d30d618a3ef72094
+
+Historical:
+http://data.fixer.io/api/YYYY-MM-DD? access_key = YOUR_ACCESS_KEY
+
+
+--------- Additional help: ----
+Windows Task shedule(cron jobb) : https://www.youtube.com/watch?v=aVdJrk704h4
+
+Create a custom confuguration file: 
+https://adrientorris.github.io/aspnet-core/add-custom-configuration-file-using-options-and-configuration-objects.html
+
+
+
