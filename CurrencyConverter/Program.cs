@@ -43,8 +43,7 @@ namespace CurrencyConverter
                 Console.WriteLine("Wrong input");
                 return;
             }
-            Console.WriteLine("\n--------- Exchange rates ----------");
-            Console.WriteLine($"{apiUrl} \n");
+            Console.WriteLine("\n--------- Exchange rates ----------");            
             decimal c1_rate = c1.rates / c1.rates;
             decimal c2_rate = c2.rates / c1.rates;
             Console.WriteLine($"{c1.currency}: {c1.rates / c1.rates} =  {c2.currency}: {c2.rates / c1.rates}");
